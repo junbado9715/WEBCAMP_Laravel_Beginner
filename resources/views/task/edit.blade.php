@@ -8,7 +8,7 @@
         <h1>タスクの編集</h1>
             @if ($errors->any())
                 <div>
-                @foreach ($erroes->all() as $error)
+                @foreach ($errors->all() as $error)
                     {{ $error }}<br>
                 @endforeach
                 </div>
@@ -20,7 +20,7 @@
                     期限:<input name="period" type="date" value="{{ old('period') ?? $task->period }}"><br>
                     タスク詳細:<textarea name="detail">{{ old('detail') ?? $task->detail }}</textarea><br>
                     重要度:<label><input type="radio" name="priority" value="1" @if ((old('priority') ?? $task->priority) == 1) checked @endif>低い</label> /
-                         <label><input type="radio" name="priority" value="2" @if ((old('priority') ?? $task->priority) == 2) checked @endif> 普通</label> /
+                         <label><input type="radio" name="priority" value="2" @if ((old('priority') ?? $task->priority) == 2) checked @endif>普通</label> /
                          <label><input type="radio" name="priority" value="3" @if ((old('priority') ?? $task->priority) == 3) checked @endif>高い</label><br>
                     <button>タスクを編集する</button>
                 </form>
