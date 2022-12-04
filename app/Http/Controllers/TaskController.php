@@ -9,6 +9,7 @@ use App\Models\Task as TaskModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\CompletedTask as CompletedTaskModel;
+use App\Models\CompletedTask as CompletedTaskController;
 
 class TaskController extends Controller
 {
@@ -283,5 +284,18 @@ $sql = $this->getListBuilder()
                     ->orderBy('priority', 'DESC')
                     ->orderBy('period')
                     ->orderBy('created_at');
+    }
+    
+     public function completed_tasks()
+    {
+        //1ページ辺りの表示アイテム数を設定
+        $per_page = 20;
+        
+        //一覧の取得
+        $list = $this->getListBuilder()
+                        ->paginate($per_page);
+                        
+          return view('completed_tasks', ['list' => $list]);
+          
     }
 }
