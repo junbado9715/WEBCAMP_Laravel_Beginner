@@ -24,7 +24,7 @@ class CompletedTaskController extends Controller
         $per_page = 20;
         
         //一覧の取得
-       $list = TaskModel::where('user_id', Auth::id())
+       $list = CompletedTask::where('user_id', Auth::id())
                          ->orderBy('priority', 'DESC')
                          ->orderBy('period')
                          ->orderBy('created_at')
