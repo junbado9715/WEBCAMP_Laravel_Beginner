@@ -26,7 +26,7 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 Route::get('/', [AuthController::class, 'index'])->name('front.index');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/user/register', [UserController::class, 'register']);
-Route::post('/user/register', [UserController::class, 'register']);
+Route::post('/user/register', [UserController::class, 'user']);
 
 // 認可処理
 Route::middleware(['auth'])->group(function () {
