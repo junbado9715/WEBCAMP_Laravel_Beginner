@@ -39,7 +39,7 @@ class UserController extends Controller
         
         try {
             //Hash化したpasswordの追加
-             $datum['password'] = Hash::make($datum['password']);
+              $datum['password'] = Hash::make($datum['password']);
             
             //データベースへの登録
             UserModel::create($datum);
