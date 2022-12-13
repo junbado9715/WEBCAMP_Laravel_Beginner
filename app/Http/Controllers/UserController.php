@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UserRegisterPostRequest;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Controllers\UserModel;
+use App\Models\User as UserModel;
 
 class UserController extends Controller
 {
