@@ -21,7 +21,7 @@ class CompletedTaskController extends Controller
     public function list()
     {
         //1ページ辺りの表示アイテム数を設定
-        $per_page = 20;
+        $per_page = 1;
         
         //一覧の取得
        $list = CompletedTaskModel::where('user_id', Auth::id())
